@@ -148,8 +148,13 @@ private extension ImageDetailsViewController {
             imageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             imageView.heightAnchor.constraint(equalToConstant: view.bounds.width),
             
+            userNameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
+            userNameLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            userNameLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            userNameLabel.heightAnchor.constraint(equalToConstant: 20),
+            
             creationDateLabel.topAnchor.constraint(
-                equalTo: imageView.bottomAnchor, constant: 20),
+                equalTo: userNameLabel.bottomAnchor, constant: 10),
             
             creationDateLabel.leadingAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
@@ -169,11 +174,6 @@ private extension ImageDetailsViewController {
             downloadsLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             downloadsLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             downloadsLabel.heightAnchor.constraint(equalToConstant: 20),
-            
-            userNameLabel.topAnchor.constraint(equalTo: downloadsLabel.bottomAnchor, constant: 10),
-            userNameLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            userNameLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            userNameLabel.heightAnchor.constraint(equalToConstant: 20),
             
             favoritesButton.topAnchor.constraint(equalTo: imageView.topAnchor, constant: 20),
             favoritesButton.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -20),

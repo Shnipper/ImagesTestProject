@@ -36,8 +36,9 @@ final class FavoriteTableViewCell: UITableViewCell {
     
     // MARK: - Methods
     
-    func setImage(with url: URL) {
+    func setImage(with url: URL?) {
         favoriteImageView.sd_setImage(with: url)
+
     }
     
     func set(userName: String) {

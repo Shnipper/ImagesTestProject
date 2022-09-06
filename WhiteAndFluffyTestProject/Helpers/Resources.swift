@@ -29,11 +29,11 @@ enum Resources {
     }
     
     enum AlertMessages {
-        static let imagesIsEmpty = "Can't find images"
+        static let imagesIsEmpty = "Try new request"
     }
         
     enum AlertTitles {
-        static let decodingError = "Image not found, try new request"
+        static let decodingError = "Image not found"
         static let invalidRequest = "Invalid Request"
         static let noData = "No Data"
     }

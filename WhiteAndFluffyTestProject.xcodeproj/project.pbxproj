@@ -130,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				A59F9D7D28C4CE7900DA9C5B /* Models */,
+				A59F9D9828C7588500DA9C5B /* Controllers */,
 				A59F9D5F28C3A83700DA9C5B /* Views */,
 			);
 			path = ImagesModule;
@@ -138,8 +139,6 @@
 		A59F9D5F28C3A83700DA9C5B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A59F9D7128C4CA5D00DA9C5B /* Protocols */,
-				A59F9D4C28C3A77300DA9C5B /* ImagesViewController.swift */,
 				A59F9D6F28C4C9C500DA9C5B /* ImageCollectionViewCell.swift */,
 			);
 			path = Views;
@@ -175,6 +174,7 @@
 		A59F9D6B28C4C95500DA9C5B /* ImageDetailsModule */ = {
 			isa = PBXGroup;
 			children = (
+				A59F9D9A28C758C800DA9C5B /* Controllers */,
 				A59F9D6C28C4C96300DA9C5B /* Views */,
 			);
 			path = ImageDetailsModule;
@@ -183,7 +183,6 @@
 		A59F9D6C28C4C96300DA9C5B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A59F9D8C28C62EF100DA9C5B /* Protocols */,
 				A59F9D6D28C4C98700DA9C5B /* ImageDetailsViewController.swift */,
 				A59F9D8528C5F56F00DA9C5B /* BaseInfoView.swift */,
 			);
@@ -201,6 +200,7 @@
 		A59F9D7428C4CB1E00DA9C5B /* FavoritesModule */ = {
 			isa = PBXGroup;
 			children = (
+				A59F9D9928C758B100DA9C5B /* Controllers */,
 				A59F9D7528C4CB4D00DA9C5B /* Views */,
 			);
 			path = FavoritesModule;
@@ -209,8 +209,6 @@
 		A59F9D7528C4CB4D00DA9C5B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A59F9D9528C72CE700DA9C5B /* Protocols */,
-				A59F9D7628C4CC1A00DA9C5B /* FavoriteListViewController.swift */,
 				A59F9D7828C4CC3800DA9C5B /* FavoriteTableViewCell.swift */,
 			);
 			path = Views;
@@ -256,6 +254,33 @@
 				A59F9D9628C72CFE00DA9C5B /* FavoritesViewProtocols.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A59F9D9828C7588500DA9C5B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A59F9D7128C4CA5D00DA9C5B /* Protocols */,
+				A59F9D4C28C3A77300DA9C5B /* ImagesViewController.swift */,
+			);
+			name = Controllers;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A59F9D9928C758B100DA9C5B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A59F9D9528C72CE700DA9C5B /* Protocols */,
+				A59F9D7628C4CC1A00DA9C5B /* FavoriteListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A59F9D9A28C758C800DA9C5B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A59F9D8C28C62EF100DA9C5B /* Protocols */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		D848C537E70C8A9CF9319049 /* Pods */ = {

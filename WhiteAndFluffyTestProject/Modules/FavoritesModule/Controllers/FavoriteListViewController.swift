@@ -50,7 +50,7 @@ final class FavoriteListViewController: UIViewController, FavoritesListViewContr
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        favoriteImages = dataManager.getFavoritesImages()
+        updateFavoriteImages()
         tableView.reloadData()
     }
 }
@@ -63,7 +63,7 @@ extension FavoriteListViewController: UITableViewDataSource {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        dataManager.getFavoritesImages().count
+        favoriteImages?.count ?? 0
     }
     
     func tableView(
@@ -99,12 +99,11 @@ extension FavoriteListViewController: UITableViewDataSource {
         tableView.beginUpdates()
         
         dataManager.removeFromFavorites(image: viewModel)
+        updateFavoriteImages()
         
         tableView.deleteRows(at: [indexPath], with: .automatic)
         
         tableView.endUpdates()
-        
-//        tableView.reloadData()
     }
 }
 
@@ -159,5 +158,9 @@ private extension FavoriteListViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    func updateFavoriteImages() {
+        favoriteImages = dataManager.getFavoritesImages()
     }
 }
