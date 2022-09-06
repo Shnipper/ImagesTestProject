@@ -4,7 +4,7 @@ protocol ModuleBuilderProtocol {
     
     func createImagesModule() -> UIViewController
     func createFavoritesModule() -> UIViewController
-    func createImageDetailsModule() -> UIViewController
+    func createImageDetailsModule(imageDetailsViewModel: ImageDetailIsViewModel) -> UIViewController
     
     func createTabBarController() -> UITabBarController
     
@@ -18,9 +18,7 @@ final class ModuleBuilder: ModuleBuilderProtocol {
         
         let networkManager = NetworkManager.shared
         
-        let presenter = ImagesPresenter(networkManager: networkManager)
-        
-        let viewController = ImagesViewController(presenter: presenter)
+        let viewController = ImagesViewController(networkManager: networkManager)
         
         let navigationController = UINavigationController(rootViewController: viewController)
 
@@ -31,7 +29,10 @@ final class ModuleBuilder: ModuleBuilderProtocol {
     }
     
     func createFavoritesModule() -> UIViewController {
-        let viewController = FavoriteListViewController()
+        
+        let dataManager = DataManager.shared
+        
+        let viewController = FavoriteListViewController(dataManager: dataManager)
         
         let navigationController = UINavigationController(rootViewController: viewController)
         
@@ -41,8 +42,16 @@ final class ModuleBuilder: ModuleBuilderProtocol {
         return navigationController
     }
     
-    func createImageDetailsModule() -> UIViewController {
-        UIViewController()
+    func createImageDetailsModule(imageDetailsViewModel: ImageDetailIsViewModel) -> UIViewController {
+        
+        let dataManager = DataManager.shared
+        
+        let viewController = ImageDetailsViewController(
+            dataManager: dataManager,
+            imageDetailsViewModel: imageDetailsViewModel)
+        
+        return viewController
+        
     }
     
     func createTabBarController() -> UITabBarController {

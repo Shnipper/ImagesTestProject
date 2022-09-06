@@ -54,13 +54,15 @@ private extension BaseInfoView {
     
     func layoutViews() {
         NSLayoutConstraint.activate([
-            infoImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             infoImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             infoImageView.topAnchor.constraint(equalTo: topAnchor),
             infoImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            infoImageView.widthAnchor.constraint(equalTo: heightAnchor),
             
             infoLabel.centerYAnchor.constraint(equalTo: infoImageView.centerYAnchor),
-            infoLabel.leadingAnchor.constraint(equalTo: infoImageView.trailingAnchor, constant: 10)
+            infoLabel.leadingAnchor.constraint(equalTo: infoImageView.trailingAnchor, constant: 10),
+            infoLabel.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -10),
+            infoLabel.heightAnchor.constraint(equalTo: infoImageView.heightAnchor)
         ])
     }
 }

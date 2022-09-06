@@ -11,10 +11,7 @@ private enum Components {
     static let host = "api.unsplash.com"
     static let path = "/photos/random"
     static let accessKey = "CQVt6HFnnjmUBE8590YduMWe6BfrsysmcKPqf3jnGVc"
-}
-
-struct UnsplashError: Decodable {
-    let errors: [String]
+    static let count = "20"
 }
 
 // MARK: - NetworkManagerProtocol
@@ -53,6 +50,7 @@ final class NetworkManager: NetworkManagerProtocol {
                 }
                 
             } catch {
+                
                 completion(.failure(.decodingError))
             }
         }
@@ -90,7 +88,7 @@ private extension NetworkManager {
     func makeParameters(with query: String?) -> [String: String] {
         var parameters: [String: String] = [:]
         
-        parameters["count"] = "20"
+        parameters["count"] = Components.count
         
         if let query = query {
             parameters["query"] = query

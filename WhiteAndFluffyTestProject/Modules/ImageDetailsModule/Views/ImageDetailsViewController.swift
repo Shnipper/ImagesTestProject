@@ -1,7 +1,7 @@
 import UIKit
 
 final class ImageDetailsViewController: UIViewController {
-    
+  
     // MARK: - Views
     
     private lazy var imageView: UIImageView = {
@@ -62,31 +62,33 @@ final class ImageDetailsViewController: UIViewController {
         let button = UIButton(type: .roundedRect)
         
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .white
+        button.backgroundColor = .systemBackground
         button.clipsToBounds = true
         button.tintColor = .systemRed
-        
-        if isFavorite {
-            button.setImage(Resources.SystemImages.heartFill, for: .normal)
-        } else {
-            button.setImage(Resources.SystemImages.heart, for: .normal)
-        }
-        
         button.setTitleColor(UIColor.black, for: .normal)
+        button.layer.borderColor = UIColor.systemRed.cgColor.copy(alpha: 0.5)
+        button.layer.borderWidth = 1
         
         return button
     }()
     
     // MARK: - Private properties
     
-    private var imageDetailInfo: ImageDetailIsViewModel
+    private let dataManager: DataManagerProtocol
+    
+    private let imageDetailInfo: ImageDetailIsViewModel
+    
     private var isFavorite: Bool {
-        DataManager.shared.isFavorite(image: imageDetailInfo)
+        dataManager.isFavorite(image: imageDetailInfo)
     }
     
     // MARK: - Init
     
-    init(imageDetailsViewModel: ImageDetailIsViewModel) {
+    init(
+        dataManager: DataManagerProtocol,
+        imageDetailsViewModel: ImageDetailIsViewModel
+    ) {
+        self.dataManager = dataManager
         self.imageDetailInfo = imageDetailsViewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -107,9 +109,17 @@ final class ImageDetailsViewController: UIViewController {
     }
 
     override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
         layoutViews()
         
         favoritesButton.layer.cornerRadius = favoritesButton.frame.width / 2
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureFavoriteButtonImage()
     }
 }
 
@@ -139,11 +149,14 @@ private extension ImageDetailsViewController {
             imageView.heightAnchor.constraint(equalToConstant: view.bounds.width),
             
             creationDateLabel.topAnchor.constraint(
-                equalTo: imageView.bottomAnchor, constant: 10),
+                equalTo: imageView.bottomAnchor, constant: 20),
+            
             creationDateLabel.leadingAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            
             creationDateLabel.trailingAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            
             creationDateLabel.heightAnchor.constraint(
                 equalToConstant: 20),
             
@@ -182,15 +195,24 @@ private extension ImageDetailsViewController {
         userNameLabel.set(labelText: imageDetailInfo.userName)
     }
     
+    func configureFavoriteButtonImage() {
+        if isFavorite {
+            favoritesButton.setImage(Resources.SystemImages.heartFill, for: .normal)
+        } else {
+            favoritesButton.setImage(Resources.SystemImages.heart, for: .normal)
+        }
+    }
+    
     @objc
     func favoriteButtonDidTapped() {
+        
         if isFavorite {
-            DataManager.shared.removeFromFavorites(image: imageDetailInfo)
-            favoritesButton.setImage(Resources.SystemImages.heart, for: .normal)
+            dataManager.removeFromFavorites(image: imageDetailInfo)
         } else {
-            DataManager.shared.addToFavorites(image: imageDetailInfo)
-            favoritesButton.setImage(Resources.SystemImages.heartFill, for: .normal)
+            dataManager.addToFavorites(image: imageDetailInfo)
         }
+        
+        configureFavoriteButtonImage()
     }
 }
 

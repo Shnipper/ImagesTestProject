@@ -1,20 +1,36 @@
 import UIKit
 
-final class FavoriteListViewController: UIViewController {
+final class FavoriteListViewController: UIViewController, FavoritesListViewControllerProtocol {
     
     // MARK: - Views
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
-        
-        tableView.register(FavoriteTableViewCell.self,
-                           forCellReuseIdentifier: FavoriteTableViewCell.reuseId)
-        
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        tableView.register(
+            FavoriteTableViewCell.self,
+            forCellReuseIdentifier: FavoriteTableViewCell.reuseId)
+        
         return tableView
     }()
     
+    // MARK: - Private properties
+    
+    private let dataManager: DataManagerProtocol
+    
     private var favoriteImages: [ImageDetailIsViewModel]?
+    
+    // MARK: - Init
+    
+    init(dataManager: DataManagerProtocol) {
+        self.dataManager = dataManager
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Overriden methods
 
@@ -34,7 +50,7 @@ final class FavoriteListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        favoriteImages = DataManager.shared.getFavoritesImages()
+        favoriteImages = dataManager.getFavoritesImages()
         tableView.reloadData()
     }
 }
@@ -47,7 +63,7 @@ extension FavoriteListViewController: UITableViewDataSource {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        DataManager.shared.getFavoritesImages().count
+        dataManager.getFavoritesImages().count
     }
     
     func tableView(
@@ -82,7 +98,7 @@ extension FavoriteListViewController: UITableViewDataSource {
         
         tableView.beginUpdates()
         
-        DataManager.shared.removeFromFavorites(image: viewModel)
+        dataManager.removeFromFavorites(image: viewModel)
         
         tableView.deleteRows(at: [indexPath], with: .automatic)
         
@@ -102,7 +118,9 @@ extension FavoriteListViewController: UITableViewDelegate {
         
         guard let viewModel = favoriteImages?[indexPath.row] else { return }
         
-        let imageDetailsViewController = ImageDetailsViewController(imageDetailsViewModel: viewModel)
+        let imageDetailsViewController = ImageDetailsViewController(
+            dataManager: DataManager.shared,
+            imageDetailsViewModel: viewModel)
         
         navigationController?.pushViewController(imageDetailsViewController, animated: true)
     }
@@ -114,7 +132,6 @@ extension FavoriteListViewController: UITableViewDelegate {
         
         .delete
     }
-    
 }
 
 // MARK: - Private methods

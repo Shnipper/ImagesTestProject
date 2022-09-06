@@ -1,14 +1,16 @@
 import Foundation
 
+// MARK: - DataManagerProtocol
+
 final class DataManager: DataManagerProtocol {
-    
-    private let codingKey = "favoritesImages"
-    private var favoriteImages: Set<ImageDetailIsViewModel> = []
     
     static let shared = DataManager()
     private init() {
         downloadFromUserDefaults()
     }
+    
+    private let codingKey = "favoritesImages"
+    private var favoriteImages: Set<ImageDetailIsViewModel> = []
     
     func getFavoritesImages() -> [ImageDetailIsViewModel] {
         return Array(favoriteImages)

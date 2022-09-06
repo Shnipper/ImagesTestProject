@@ -1,14 +1,6 @@
 import Foundation
 
-protocol ImagesViewControllerProtocol: AnyObject {
-    
-    init(presenter: ImagesPresenterProtocol)
-}
-
-protocol ImagesPresenterProtocol: AnyObject {
-    
-    var view: ImagesViewControllerProtocol? { get set }
+protocol ImagesViewControllerProtocol {
     
     init(networkManager: NetworkManagerProtocol)
-    
 }

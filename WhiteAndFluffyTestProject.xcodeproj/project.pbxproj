@@ -20,7 +20,6 @@
 		A59F9D7328C4CA7C00DA9C5B /* ImagesViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F9D7228C4CA7C00DA9C5B /* ImagesViewProtocols.swift */; };
 		A59F9D7728C4CC1A00DA9C5B /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F9D7628C4CC1A00DA9C5B /* FavoriteListViewController.swift */; };
 		A59F9D7928C4CC3800DA9C5B /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F9D7828C4CC3800DA9C5B /* FavoriteTableViewCell.swift */; };
-		A59F9D7C28C4CD4A00DA9C5B /* ImagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F9D7B28C4CD4A00DA9C5B /* ImagesPresenter.swift */; };
 		A59F9D8028C4CF4E00DA9C5B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F9D7F28C4CF4E00DA9C5B /* Image.swift */; };
 		A59F9D8228C4ED7700DA9C5B /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F9D8128C4ED7700DA9C5B /* Resources.swift */; };
 		A59F9D8428C5119C00DA9C5B /* ImageDetailIsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F9D8328C5119C00DA9C5B /* ImageDetailIsViewModel.swift */; };
@@ -30,6 +29,7 @@
 		A59F9D8E28C637A700DA9C5B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F9D8D28C637A700DA9C5B /* DataManager.swift */; };
 		A59F9D9128C63A4200DA9C5B /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F9D9028C63A4200DA9C5B /* NetworkManagerProtocol.swift */; };
 		A59F9D9328C63A6000DA9C5B /* DataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F9D9228C63A6000DA9C5B /* DataManagerProtocol.swift */; };
+		A59F9D9728C72CFE00DA9C5B /* FavoritesViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F9D9628C72CFE00DA9C5B /* FavoritesViewProtocols.swift */; };
 		D0651929930072148216AC67 /* Pods_WhiteAndFluffyTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A1615123447D71E7E463566 /* Pods_WhiteAndFluffyTestProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +52,6 @@
 		A59F9D7228C4CA7C00DA9C5B /* ImagesViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewProtocols.swift; sourceTree = "<group>"; };
 		A59F9D7628C4CC1A00DA9C5B /* FavoriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
 		A59F9D7828C4CC3800DA9C5B /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
-		A59F9D7B28C4CD4A00DA9C5B /* ImagesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesPresenter.swift; sourceTree = "<group>"; };
 		A59F9D7F28C4CF4E00DA9C5B /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		A59F9D8128C4ED7700DA9C5B /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		A59F9D8328C5119C00DA9C5B /* ImageDetailIsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailIsViewModel.swift; sourceTree = "<group>"; };
@@ -62,6 +61,7 @@
 		A59F9D8D28C637A700DA9C5B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A59F9D9028C63A4200DA9C5B /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
 		A59F9D9228C63A6000DA9C5B /* DataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerProtocol.swift; sourceTree = "<group>"; };
+		A59F9D9628C72CFE00DA9C5B /* FavoritesViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				A59F9D7D28C4CE7900DA9C5B /* Models */,
-				A59F9D7A28C4CD2800DA9C5B /* Presenters */,
 				A59F9D5F28C3A83700DA9C5B /* Views */,
 			);
 			path = ImagesModule;
@@ -213,18 +212,11 @@
 		A59F9D7528C4CB4D00DA9C5B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A59F9D9528C72CE700DA9C5B /* Protocols */,
 				A59F9D7628C4CC1A00DA9C5B /* FavoriteListViewController.swift */,
 				A59F9D7828C4CC3800DA9C5B /* FavoriteTableViewCell.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		A59F9D7A28C4CD2800DA9C5B /* Presenters */ = {
-			isa = PBXGroup;
-			children = (
-				A59F9D7B28C4CD4A00DA9C5B /* ImagesPresenter.swift */,
-			);
-			path = Presenters;
 			sourceTree = "<group>";
 		};
 		A59F9D7D28C4CE7900DA9C5B /* Models */ = {
@@ -257,6 +249,14 @@
 			children = (
 				A59F9D9028C63A4200DA9C5B /* NetworkManagerProtocol.swift */,
 				A59F9D9228C63A6000DA9C5B /* DataManagerProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A59F9D9528C72CE700DA9C5B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A59F9D9628C72CFE00DA9C5B /* FavoritesViewProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -415,11 +415,11 @@
 				A59F9D8928C604D900DA9C5B /* AlertWorker.swift in Sources */,
 				A59F9D4D28C3A77300DA9C5B /* ImagesViewController.swift in Sources */,
 				A59F9D8B28C62EE000DA9C5B /* ImageDetailsViewProtocols.swift in Sources */,
-				A59F9D7C28C4CD4A00DA9C5B /* ImagesPresenter.swift in Sources */,
 				A59F9D7028C4C9C500DA9C5B /* ImageCollectionViewCell.swift in Sources */,
 				A59F9D6E28C4C98700DA9C5B /* ImageDetailsViewController.swift in Sources */,
 				A59F9D7328C4CA7C00DA9C5B /* ImagesViewProtocols.swift in Sources */,
 				A59F9D9328C63A6000DA9C5B /* DataManagerProtocol.swift in Sources */,
+				A59F9D9728C72CFE00DA9C5B /* FavoritesViewProtocols.swift in Sources */,
 				A59F9D8428C5119C00DA9C5B /* ImageDetailIsViewModel.swift in Sources */,
 				A59F9D8028C4CF4E00DA9C5B /* Image.swift in Sources */,
 				A59F9D4928C3A77300DA9C5B /* AppDelegate.swift in Sources */,

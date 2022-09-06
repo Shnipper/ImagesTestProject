@@ -19,13 +19,9 @@ final class ImagesViewController: UIViewController {
         return collectionView
     }()
     
-    // MARK: - Presenter
-    
-    private let presenter: ImagesPresenterProtocol
-    
     // MARK: - Private properties
     
-    private let networkManager = NetworkManager.shared
+    private let networkManager: NetworkManagerProtocol
     
     private var images: [Image]? {
         didSet {
@@ -43,13 +39,9 @@ final class ImagesViewController: UIViewController {
 
     // MARK: - Init
     
-    required init(presenter: ImagesPresenterProtocol) {
-        self.presenter = presenter
-        
+    required init(networkManager: NetworkManagerProtocol) {
+        self.networkManager = networkManager
         super.init(nibName: nil, bundle: nil)
-        
-        presenter.view = self
-        
     }
     
     required init?(coder: NSCoder) {
@@ -159,7 +151,9 @@ extension ImagesViewController: UICollectionViewDelegate {
         
         let viewModel = makeImageDetailInfoViewModel(by: image)
         
-        let imageDetailsViewController = ImageDetailsViewController(imageDetailsViewModel: viewModel)
+        let imageDetailsViewController = ImageDetailsViewController(
+            dataManager: DataManager.shared,
+            imageDetailsViewModel: viewModel)
         
         navigationController?.pushViewController(imageDetailsViewController, animated: true)
     }
