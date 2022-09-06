@@ -72,7 +72,12 @@ extension FavoriteListViewController: UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(
+        _ tableView: UITableView,
+        commit editingStyle: UITableViewCell.EditingStyle,
+        forRowAt indexPath: IndexPath
+    ) {
+        
         guard let viewModel = favoriteImages?[indexPath.row] else { return }
         
         tableView.beginUpdates()
@@ -130,7 +135,7 @@ private extension FavoriteListViewController {
     }
     
     func configure() {
-        navigationItem.title = Resources.ForItem.Titles.favoritesModule
+        navigationItem.title = Resources.ItemTitles.favoritesModule
         
         view.backgroundColor = .systemBackground
         

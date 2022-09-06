@@ -17,30 +17,24 @@ enum Resources {
         static let downloads = "0"
         static let userName = "unknown name"
     }
-    
-    enum ForItem {
         
-        enum Titles {
-            static let imagesModule = "Images"
-            static let favoritesModule = "Favorites"
-        }
+    enum ItemTitles {
+        static let imagesModule = "Images"
+        static let favoritesModule = "Favorites"
+    }
         
-        enum Images {
-            static let imagesModule = UIImage(systemName: "photo.on.rectangle.angled")
-            static let favoritesModule = UIImage(systemName: "heart.circle.fill")
-        }
+    enum ItemImages {
+        static let imagesModule = UIImage(systemName: "photo.on.rectangle.angled")
+        static let favoritesModule = UIImage(systemName: "heart.circle.fill")
     }
     
-    enum Alert {
+    enum AlertMessages {
+        static let imagesIsEmpty = "Can't find images"
+    }
         
-        enum Messages {
-            static let imagesIsEmpty = "Can't find images"
-        }
-        
-        enum Titles {
-            static let decodingError = "Image not found, try new request"
-            static let invalidRequest = "Invalid Request"
-            static let noData = "No Data"
-        }
+    enum AlertTitles {
+        static let decodingError = "Image not found, try new request"
+        static let invalidRequest = "Invalid Request"
+        static let noData = "No Data"
     }
 }

@@ -9,4 +9,3 @@ protocol DataManagerProtocol {
     func removeFromFavorites(image: ImageDetailIsViewModel)
     func isFavorite(image: ImageDetailIsViewModel) -> Bool
 }
-

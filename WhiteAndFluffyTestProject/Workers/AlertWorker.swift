@@ -16,11 +16,11 @@ final class AlertWorker: AlertWorkerProtocol {
         
         switch error {
         case .decodingError:
-            title = Resources.Alert.Titles.decodingError
+            title = Resources.AlertTitles.decodingError
         case .invalidRequest:
-            title = Resources.Alert.Titles.invalidRequest
+            title = Resources.AlertTitles.invalidRequest
         case .noData:
-            title = Resources.Alert.Titles.noData
+            title = Resources.AlertTitles.noData
         }
         
         return title

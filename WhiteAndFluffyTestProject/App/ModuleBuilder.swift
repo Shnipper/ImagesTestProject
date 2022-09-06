@@ -24,8 +24,8 @@ final class ModuleBuilder: ModuleBuilderProtocol {
         
         let navigationController = UINavigationController(rootViewController: viewController)
 
-        navigationController.tabBarItem.image = Resources.ForItem.Images.imagesModule
-        navigationController.tabBarItem.title = Resources.ForItem.Titles.imagesModule
+        navigationController.tabBarItem.title = Resources.ItemTitles.imagesModule
+        navigationController.tabBarItem.image = Resources.ItemImages.imagesModule
 
         return navigationController
     }
@@ -35,8 +35,8 @@ final class ModuleBuilder: ModuleBuilderProtocol {
         
         let navigationController = UINavigationController(rootViewController: viewController)
         
-        navigationController.tabBarItem.title = Resources.ForItem.Titles.favoritesModule
-        navigationController.tabBarItem.image = Resources.ForItem.Images.favoritesModule
+        navigationController.tabBarItem.title = Resources.ItemTitles.favoritesModule
+        navigationController.tabBarItem.image = Resources.ItemImages.favoritesModule
         
         return navigationController
     }

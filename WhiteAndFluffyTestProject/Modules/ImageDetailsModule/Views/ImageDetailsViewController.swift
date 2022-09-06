@@ -1,6 +1,6 @@
 import UIKit
 
-final class ImageDetailsViewController: UIViewController{
+final class ImageDetailsViewController: UIViewController {
     
     // MARK: - Views
     
@@ -138,23 +138,27 @@ private extension ImageDetailsViewController {
             imageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             imageView.heightAnchor.constraint(equalToConstant: view.bounds.width),
             
-            creationDateLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant:  10),
-            creationDateLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant:  10),
-            creationDateLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            creationDateLabel.heightAnchor.constraint(equalToConstant: 20),
+            creationDateLabel.topAnchor.constraint(
+                equalTo: imageView.bottomAnchor, constant: 10),
+            creationDateLabel.leadingAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            creationDateLabel.trailingAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            creationDateLabel.heightAnchor.constraint(
+                equalToConstant: 20),
             
-            locationLabel.topAnchor.constraint(equalTo: creationDateLabel.bottomAnchor, constant:  10),
-            locationLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant:  10),
+            locationLabel.topAnchor.constraint(equalTo: creationDateLabel.bottomAnchor, constant: 10),
+            locationLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             locationLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             locationLabel.heightAnchor.constraint(equalToConstant: 20),
             
-            downloadsLabel.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant:  10),
-            downloadsLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant:  10),
+            downloadsLabel.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: 10),
+            downloadsLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             downloadsLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             downloadsLabel.heightAnchor.constraint(equalToConstant: 20),
             
-            userNameLabel.topAnchor.constraint(equalTo: downloadsLabel.bottomAnchor, constant:  10),
-            userNameLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant:  10),
+            userNameLabel.topAnchor.constraint(equalTo: downloadsLabel.bottomAnchor, constant: 10),
+            userNameLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             userNameLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             userNameLabel.heightAnchor.constraint(equalToConstant: 20),
             

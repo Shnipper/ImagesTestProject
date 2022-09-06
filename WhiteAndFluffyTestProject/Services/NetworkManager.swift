@@ -17,7 +17,6 @@ struct UnsplashError: Decodable {
     let errors: [String]
 }
 
-
 // MARK: - NetworkManagerProtocol
 
 final class NetworkManager: NetworkManagerProtocol {
@@ -36,7 +35,7 @@ final class NetworkManager: NetworkManagerProtocol {
         
         guard let request = makeRequest(query: query) else { return }
         
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        URLSession.shared.dataTask(with: request) { data, _, _ in
             
             guard let data = data else {
                 return completion(.failure(.noData))

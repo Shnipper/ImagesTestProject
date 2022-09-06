@@ -165,7 +165,6 @@ extension ImagesViewController: UICollectionViewDelegate {
     }
 }
 
-
 // MARK: - UISearchBarDelegate
 
 extension ImagesViewController: UISearchBarDelegate {
@@ -215,7 +214,7 @@ private extension ImagesViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        navigationItem.title = Resources.ForItem.Titles.imagesModule
+        navigationItem.title = Resources.ItemTitles.imagesModule
     }
     
     func makeImageDetailInfoViewModel(by image: Image) -> ImageDetailIsViewModel {
@@ -245,7 +244,7 @@ private extension ImagesViewController {
                 DispatchQueue.main.async {
                     self.showAlert(
                         with: AlertWorker.makeTitle(by: error),
-                        and: Resources.Alert.Messages.imagesIsEmpty
+                        and: Resources.AlertMessages.imagesIsEmpty
                     )
                 }
             }

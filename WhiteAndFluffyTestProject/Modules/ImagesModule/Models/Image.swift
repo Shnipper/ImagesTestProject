@@ -2,8 +2,7 @@ import Foundation
 
 // MARK: - Model example (cropped)
 
-//[
-//  {
+//  [{
 //    "id": "LBI7cgq3pbM",
 //    
 //    "created_at": "2016-05-03T11:00:28-04:00",
@@ -26,8 +25,7 @@ import Foundation
 //      "name": "Gilbert Kane",
 //    }
 //    
-//  },                      // ... more Images
-//]
+//  }, ... more Images]
 
 // MARK: - Image Model
 

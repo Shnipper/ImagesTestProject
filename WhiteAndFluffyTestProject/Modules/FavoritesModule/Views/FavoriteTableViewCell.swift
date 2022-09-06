@@ -64,7 +64,7 @@ private extension FavoriteTableViewCell {
             userNameLabel.topAnchor.constraint(equalTo: topAnchor),
             userNameLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
             userNameLabel.leadingAnchor.constraint(equalTo: favoriteImageView.trailingAnchor, constant: 20),
-            userNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            userNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ])
     }
 }
