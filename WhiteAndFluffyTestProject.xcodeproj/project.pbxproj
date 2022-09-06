@@ -13,7 +13,6 @@
 		A59F9D5228C3A77400DA9C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59F9D5128C3A77400DA9C5B /* Assets.xcassets */; };
 		A59F9D5528C3A77400DA9C5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59F9D5328C3A77400DA9C5B /* LaunchScreen.storyboard */; };
 		A59F9D6328C3A88800DA9C5B /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F9D6228C3A88800DA9C5B /* ModuleBuilder.swift */; };
-		A59F9D6528C3A89500DA9C5B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F9D6428C3A89500DA9C5B /* Coordinator.swift */; };
 		A59F9D6A28C3C6C300DA9C5B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F9D6928C3C6C300DA9C5B /* NetworkManager.swift */; };
 		A59F9D6E28C4C98700DA9C5B /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F9D6D28C4C98700DA9C5B /* ImageDetailsViewController.swift */; };
 		A59F9D7028C4C9C500DA9C5B /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F9D6F28C4C9C500DA9C5B /* ImageCollectionViewCell.swift */; };
@@ -45,7 +44,6 @@
 		A59F9D5428C3A77400DA9C5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A59F9D5628C3A77400DA9C5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A59F9D6228C3A88800DA9C5B /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
-		A59F9D6428C3A89500DA9C5B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A59F9D6928C3C6C300DA9C5B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A59F9D6D28C4C98700DA9C5B /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
 		A59F9D6F28C4C9C500DA9C5B /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 				A59F9D4828C3A77300DA9C5B /* AppDelegate.swift */,
 				A59F9D4A28C3A77300DA9C5B /* SceneDelegate.swift */,
 				A59F9D6228C3A88800DA9C5B /* ModuleBuilder.swift */,
-				A59F9D6428C3A89500DA9C5B /* Coordinator.swift */,
 				A59F9D5628C3A77400DA9C5B /* Info.plist */,
 			);
 			path = App;
@@ -423,7 +420,6 @@
 				A59F9D8428C5119C00DA9C5B /* ImageDetailIsViewModel.swift in Sources */,
 				A59F9D8028C4CF4E00DA9C5B /* Image.swift in Sources */,
 				A59F9D4928C3A77300DA9C5B /* AppDelegate.swift in Sources */,
-				A59F9D6528C3A89500DA9C5B /* Coordinator.swift in Sources */,
 				A59F9D4B28C3A77300DA9C5B /* SceneDelegate.swift in Sources */,
 				A59F9D7728C4CC1A00DA9C5B /* FavoriteListViewController.swift in Sources */,
 				A59F9D8E28C637A700DA9C5B /* DataManager.swift in Sources */,

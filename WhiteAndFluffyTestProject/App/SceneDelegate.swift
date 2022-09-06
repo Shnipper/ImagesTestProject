@@ -15,12 +15,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
-        let moduleBuilder = ModuleBuilder()
+        let moduleBuilder = ModuleBuilder.shared
         
-        let coordinator: CoordinatorProtocol = Coordinator(moduleBuilder: moduleBuilder)
+        let imagesViewController = moduleBuilder.createImagesModule()
+        let favoritesViewController = moduleBuilder.createFavoritesModule()
         
-        if let window = window {
-            coordinator.start(window)
-        }
+        let tabBarController = moduleBuilder.createTabBarController()
+        
+        tabBarController.setViewControllers(
+            [imagesViewController, favoritesViewController],
+            animated: false
+        )
+        
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
     }
 }

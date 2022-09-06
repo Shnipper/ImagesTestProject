@@ -151,11 +151,10 @@ extension ImagesViewController: UICollectionViewDelegate {
         
         let viewModel = makeImageDetailInfoViewModel(by: image)
         
-        let imageDetailsViewController = ImageDetailsViewController(
-            dataManager: DataManager.shared,
+        let viewController = ModuleBuilder.shared.createImageDetailsModule(
             imageDetailsViewModel: viewModel)
         
-        navigationController?.pushViewController(imageDetailsViewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

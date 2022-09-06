@@ -103,6 +103,8 @@ extension FavoriteListViewController: UITableViewDataSource {
         tableView.deleteRows(at: [indexPath], with: .automatic)
         
         tableView.endUpdates()
+        
+//        tableView.reloadData()
     }
 }
 
@@ -118,11 +120,10 @@ extension FavoriteListViewController: UITableViewDelegate {
         
         guard let viewModel = favoriteImages?[indexPath.row] else { return }
         
-        let imageDetailsViewController = ImageDetailsViewController(
-            dataManager: DataManager.shared,
+        let viewController = ModuleBuilder.shared.createImageDetailsModule(
             imageDetailsViewModel: viewModel)
         
-        navigationController?.pushViewController(imageDetailsViewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     func tableView(

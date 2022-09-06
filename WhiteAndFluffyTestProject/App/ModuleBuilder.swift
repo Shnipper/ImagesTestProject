@@ -2,6 +2,8 @@ import UIKit
 
 protocol ModuleBuilderProtocol {
     
+    static var shared: ModuleBuilder { get }
+    
     func createImagesModule() -> UIViewController
     func createFavoritesModule() -> UIViewController
     func createImageDetailsModule(imageDetailsViewModel: ImageDetailIsViewModel) -> UIViewController
@@ -13,6 +15,9 @@ protocol ModuleBuilderProtocol {
 // MARK: - ModuleBuilderProtocol
 
 final class ModuleBuilder: ModuleBuilderProtocol {
+    
+    static let shared = ModuleBuilder()
+    private init() {}
     
     func createImagesModule() -> UIViewController {
         
