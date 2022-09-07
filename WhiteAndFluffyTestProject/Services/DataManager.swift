@@ -10,10 +10,11 @@ final class DataManager: DataManagerProtocol {
     }
     
     private let codingKey = "favoritesImages"
+    
     private var favoriteImages: Set<ImageDetailIsViewModel> = []
     
     func getFavoritesImages() -> [ImageDetailIsViewModel] {
-        return Array(favoriteImages)
+        return Array(favoriteImages).sorted(by: <)
     }
     
     func addToFavorites(image: ImageDetailIsViewModel) {
