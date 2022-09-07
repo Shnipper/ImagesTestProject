@@ -213,6 +213,7 @@ private extension ImagesViewController {
     func makeImageDetailInfoViewModel(by image: Image) -> ImageDetailIsViewModel {
         
         ImageDetailIsViewModel(
+            id: image.id,
             regularImageUrl: image.urls.regular,
             smallImageUrl: image.urls.small,
             creationDate: image.createdAt,

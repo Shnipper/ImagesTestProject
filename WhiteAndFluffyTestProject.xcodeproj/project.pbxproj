@@ -183,7 +183,6 @@
 		A59F9D6C28C4C96300DA9C5B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A59F9D6D28C4C98700DA9C5B /* ImageDetailsViewController.swift */,
 				A59F9D8528C5F56F00DA9C5B /* BaseInfoView.swift */,
 			);
 			path = Views;
@@ -279,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				A59F9D8C28C62EF100DA9C5B /* Protocols */,
+				A59F9D6D28C4C98700DA9C5B /* ImageDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
